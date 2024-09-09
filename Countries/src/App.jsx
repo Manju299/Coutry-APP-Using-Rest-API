@@ -1,22 +1,47 @@
-import { useState } from 'react';
-import './App.css'
-import Header from './components/Header'
-import Listofcountries from './components/Listofcountries'
-import Seach from './components/Seach'
-
+import { useEffect, useState } from "react";
+// import "./App.css";
+import Header from "./components/Header";
+import CountryDetails from "./components/CountryDetails";
+import Listofcountries from "./components/Listofcountries";
+import { TheameProvider, useTheme } from "./TheameContext";
+// import Seach from "./components/Seach";
+// import FilterCouties from "./components/filterCouties";
+import Container from "./components/Container";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  const[country , setCuntries] = useState([]);
-  const [search, setSearch] = useState("A");
-  
-
+  const [country, setCuntries] = useState([]);
+  const [search, setSearch] = useState("");
   return (
     <>
-    <Header/>
-    <Seach search={search} setSearch={setSearch}/>
-    <Listofcountries country={country} setCuntries={setCuntries} search={search}/>
+      <BrowserRouter>
+        <TheameProvider>
+          <Header />
+          {/* <Listofcountries
+        country={country}
+        setCuntries={setCuntries}
+        search={search}
+      />
+      <CountryDetails country={country} setCuntries={setCuntries} /> */}
+
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Listofcountries
+                  country={country}
+                  setCuntries={setCuntries}
+                  search={search}
+                  setSearch={setSearch}
+                />
+              }
+            />
+            <Route path="/countries/:county" element={<CountryDetails />} />
+          </Routes>
+        </TheameProvider>
+      </BrowserRouter>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

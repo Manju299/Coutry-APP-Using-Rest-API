@@ -1,0 +1,14 @@
+.Container {
+  /* display: flex;
+  justify-content: space-around; */
+}
+
+.light {
+  background-color: #fafafa;
+  color: #202d36;
+}
+
+.dark {
+  background-color: #202d36;
+  color: white;
+}

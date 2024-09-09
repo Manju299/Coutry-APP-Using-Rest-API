@@ -1,0 +1,13 @@
+.light {
+  background-color: #fafafa;
+  color: #202d36;
+}
+
+.dark {
+  background-color: #202d36;
+  color: white;
+}
+
+.loading {
+  margin-left: 40px;
+}

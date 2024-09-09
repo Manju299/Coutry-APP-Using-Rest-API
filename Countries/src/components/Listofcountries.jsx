@@ -1,11 +1,16 @@
 import { useEffect, useState } from "react";
 import DisplyaCountries from "./DisplayCountries";
 import PropTypes from "prop-types";
+import Styles from "../styles/listofcountries.module.css";
+import { useTheme } from "../TheameContext";
+import Header from "./Header";
+import Container from "./Container";
 
 // eslint-disable-next-line react/prop-types
-export default function Listofcountries({ country, setCuntries, search }) {
+export default function Listofcountries({ country, setCuntries, search , setSearch}) {
   const [isLoading, setLoading] = useState(true);
   const [filteredData, setfilteredData] = useState([]);
+  const darkTheme = useTheme();
 
   useEffect(() => {
     async function fetchAllCoutries() {
@@ -32,9 +37,11 @@ export default function Listofcountries({ country, setCuntries, search }) {
   }, [search, country]);
 
   return (
-    <div>
+    <div className={darkTheme ? Styles.light : Styles.dark}>
+      
+      <Container search={search} setSearch={setSearch} country={country} />
       {isLoading ? (
-        <h1>Loading...</h1>
+        <h1 className={Styles.loading}>Loading...</h1>
       ) : (
         <DisplyaCountries country={filteredData} />
       )}

@@ -14,13 +14,15 @@
 
   */
 
-
-body{
+body.dark {
   margin: 0;
   padding: 0;
-  background: #202d36;
+  background-color: #202d36;
   /* font-family:"Nunito, sans-serif"; */
 }
 
-
-
+body.light {
+  margin: 0;
+  padding: 0;
+  background-color: #fafafa;
+}

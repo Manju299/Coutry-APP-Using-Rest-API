@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 100vh;
+  color: white;
+  align-items: center;
+  font-family: "Nunito", sans-serif;
+}
+.info {
+  flex: 1;
+  padding: 20px;
+  overflow: hidden;
+  /* display: flex; */
+}
+
+img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+p {
+  font-weight: 600;
+}
+
+.commanname {
+  font-weight: 900;
+  font-size: 24px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 24px;
+  box-shadow: 0px 0px 2px 1px #ab9e9e;
+  border-radius: 4px;
+  border: none;
+  margin-left: 40px;
+  margin-top: 40px;
+  cursor: pointer;
+}
+
+.button img {
+  width: 12px;
+  height: 12px;
+}
+
+.countyInfo {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
