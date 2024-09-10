@@ -4,8 +4,9 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  height: 100vh;
+  height: 55vh;
   color: white;
+  margin: 24px;
   align-items: center;
   font-family: "Nunito", sans-serif;
 }
@@ -37,7 +38,7 @@ p {
   align-items: center;
   gap: 4px;
   padding: 10px 24px;
-  box-shadow: 0px 0px 2px 1px #ab9e9e;
+
   border-radius: 4px;
   border: none;
   margin-left: 40px;
@@ -46,12 +47,41 @@ p {
 }
 
 .button img {
-  width: 12px;
-  height: 12px;
+  width: 16px;
+  height: 16px;
+  filter: contrast(0%);
 }
 
 .countyInfo {
   display: flex;
   gap: 20px;
   justify-content: space-between;
+}
+
+.darkButton {
+  background-color: #2b3743;
+  color: #ffffff;
+  box-shadow: 0px 0px 2px 1px #1a2631;
+  fill: "##000000";
+}
+
+.lightButton {
+  background-color: #ffffff;
+  color: #2b3743;
+  box-shadow: 0px 0px 2px 1px #ab9e9e;
+}
+
+.light {
+  color: #2b3743;
+}
+.dark {
+  color: #ffffff;
+}
+.border {
+  padding: 10px 24px;
+  /* box-shadow: 0px 0px 2px 1px #ab9e9e; */
+  border-radius: 4px;
+  margin-left: 10px;
+  border: none;
+  cursor: pointer;
 }

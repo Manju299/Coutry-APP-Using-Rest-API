@@ -1,11 +1,13 @@
 .light {
   background-color: #fafafa;
   color: #202d36;
+  position: relative;
 }
 
 .dark {
   background-color: #202d36;
   color: white;
+  position: relative;
 }
 
 .loading {

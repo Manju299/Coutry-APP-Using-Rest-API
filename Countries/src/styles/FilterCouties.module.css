@@ -1,8 +1,20 @@
 select {
   padding: 20px;
   margin-top: 40px;
-  background: #2b3743;
   color: white;
+  position: absolute;
+  top: 0px;
+  right: 40px;
+  border: none;
+}
+
+.darkthem {
+  background: #2b3743;
+  color: #ced9e3;
+}
+.light {
+  background: white;
+  color: #2b3743;
 }
 select::after {
   position: absolute;

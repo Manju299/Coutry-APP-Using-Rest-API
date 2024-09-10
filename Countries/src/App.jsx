@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 // import "./App.css";
 import Header from "./components/Header";
 import CountryDetails from "./components/CountryDetails";
 import Listofcountries from "./components/Listofcountries";
-import { TheameProvider, useTheme } from "./TheameContext";
+import { TheameProvider } from "./TheameContext";
 // import Seach from "./components/Seach";
 // import FilterCouties from "./components/filterCouties";
 import Container from "./components/Container";
@@ -17,13 +17,6 @@ function App() {
       <BrowserRouter>
         <TheameProvider>
           <Header />
-          {/* <Listofcountries
-        country={country}
-        setCuntries={setCuntries}
-        search={search}
-      />
-      <CountryDetails country={country} setCuntries={setCuntries} /> */}
-
           <Routes>
             <Route
               path="/"

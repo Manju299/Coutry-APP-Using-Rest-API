@@ -2,7 +2,7 @@
 import Styles from "../styles/Container.module.css";
 import { useTheme } from "../TheameContext";
 import Seach from "./Seach";
-// import FilterCouties from "./filterCouties";
+import FilterCouties from "./filterCouties";
 
 export default function Container({ search, setSearch, country }) {
   const darkTheme = useTheme();
@@ -13,7 +13,7 @@ export default function Container({ search, setSearch, country }) {
       }`}
     >
       <Seach search={search} setSearch={setSearch} />
-      {/* <FilterCouties country={country} /> */}
+      <FilterCouties country={country} />
     </div>
   );
 }

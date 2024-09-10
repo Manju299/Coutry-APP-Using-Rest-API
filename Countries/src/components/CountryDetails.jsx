@@ -3,12 +3,14 @@ import { useEffect, useState } from "react";
 import Styles from "../styles/CountryDetails.module.css";
 import back from "../assets/back.svg";
 import { useParams, useNavigate } from "react-router-dom";
+import { useTheme } from "../TheameContext";
 
 // eslint-disable-next-line react/prop-types
 export default function CountryDetails() {
   const [detailedCoutry, setDetailedCountry] = useState([]);
   const { county } = useParams();
   const navigate = useNavigate();
+  const darkTheme = useTheme();
 
   console.log(detailedCoutry);
 
@@ -30,7 +32,12 @@ export default function CountryDetails() {
 
   return (
     <>
-      <button onClick={handleBack} className={Styles.button}>
+      <button
+        onClick={handleBack}
+        className={`${Styles.button} ${
+          darkTheme ? Styles.lightButton : Styles.darkButton
+        }`}
+      >
         <img src={back} alt="Go Back"></img> <span>Back</span>
       </button>
       {detailedCoutry.map((items) => (
@@ -38,7 +45,11 @@ export default function CountryDetails() {
           <div className={Styles.info}>
             <img src={items.flags.svg} alt={items.flags.alt} />
           </div>
-          <div className={Styles.info}>
+          <div
+            className={`${Styles.info} ${
+              darkTheme ? Styles.light : Styles.dark
+            }`}
+          >
             <p className={Styles.commanname}>{items.name.common}</p>
 
             <div className={Styles.countyInfo}>
@@ -71,7 +82,8 @@ export default function CountryDetails() {
                   <span> {items.region}</span>
                 </p>
                 <p>
-                  Sub Region: <span>{items.subregion}</span>
+                  {items.borders ? "Sub Region:" : ""}{" "}
+                  <span>{items.subregion}</span>
                 </p>
               </div>
               <div>
@@ -91,9 +103,16 @@ export default function CountryDetails() {
             </div>
 
             <div>
-              Border countries:
+              {items.borders ? "Border Countries:" : ""}
               {items.borders?.map((list, index) => (
-                <button key={index}> {list} </button>
+                <button
+                  key={index}
+                  className={`${Styles.border} ${
+                    darkTheme ? Styles.lightButton : Styles.darkButton
+                  }`}
+                >
+                  {list}
+                </button>
               ))}
             </div>
           </div>

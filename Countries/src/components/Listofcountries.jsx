@@ -7,7 +7,12 @@ import Header from "./Header";
 import Container from "./Container";
 
 // eslint-disable-next-line react/prop-types
-export default function Listofcountries({ country, setCuntries, search , setSearch}) {
+export default function Listofcountries({
+  country,
+  setCuntries,
+  search,
+  setSearch,
+}) {
   const [isLoading, setLoading] = useState(true);
   const [filteredData, setfilteredData] = useState([]);
   const darkTheme = useTheme();
@@ -38,12 +43,15 @@ export default function Listofcountries({ country, setCuntries, search , setSear
 
   return (
     <div className={darkTheme ? Styles.light : Styles.dark}>
-      
-      <Container search={search} setSearch={setSearch} country={country} />
       {isLoading ? (
         <h1 className={Styles.loading}>Loading...</h1>
       ) : (
-        <DisplyaCountries country={filteredData} />
+        // <DisplyaCountries country={filteredData} />
+        <Container
+          search={search}
+          setSearch={setSearch}
+          country={filteredData}
+        />
       )}
     </div>
   );
