@@ -11,7 +11,7 @@
 .subcontainer {
   margin: 45px;
   background-color: #2b3743;
-  box-shadow: 1px 4px 11px 0px;
+  box-shadow: 1px 4px 11px 0px #141313;
   border-radius: 4px;
   width: 300px;
   overflow: hidden;
